@@ -3,20 +3,22 @@ body {
   margin: 0;
   padding-left: 10px;
   padding-bottom: 10px;
+  margin-right: 10px;
   margin-top: 20px;
-  /* background-color: rgb(27, 34, 49);
-  color: rgb(189, 182, 182); */
+  width: 350px;
+  background-color: rgb(157, 161, 171);
 }
 
 #task-input-container {
-  width: 250px;
+  width: 100%;
   margin-bottom: 5px;
-
   font-size: 14px;
+  display: flex;
+
 }
 
 #new-task {
-  width: 190px;
+  width: 100%;
   margin-right: 5px;
 }
 
@@ -34,7 +36,7 @@ body {
 }
 
 #task-list .task .task-text {
-  width: 180px;
+  width: 100%;
   display: block;
 }
 
