@@ -1,0 +1,47 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  margin-top: 20px;
+  /* background-color: rgb(27, 34, 49);
+  color: rgb(189, 182, 182); */
+}
+
+#task-input-container {
+  width: 250px;
+  margin-bottom: 5px;
+
+  font-size: 14px;
+}
+
+#new-task {
+  width: 190px;
+  margin-right: 5px;
+}
+
+#task-list {
+  list-style: none;
+  cursor: default;
+  padding: 0;
+  margin: 0;
+}
+
+#task-list .task {
+  display: flex;
+  align-items: center;
+  margin-top: 7px;
+}
+
+#task-list .task .task-text {
+  width: 180px;
+  display: block;
+}
+
+#task-list .task .edit-button {
+  margin-right: 2px;
+}
+
+#task-list .task .completed {
+  text-decoration: line-through;
+}
