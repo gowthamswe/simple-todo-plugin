@@ -39,7 +39,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function saveTasks() {
     localStorage.setItem("task-list", JSON.stringify(tasks));
-    // chrome.storage.local.set("task-list", JSON.stringify(tasks));
     renderTasks();
   }
 
@@ -49,12 +48,33 @@ document.addEventListener("DOMContentLoaded", function () {
     renderTasks();
   }
 
+  function reorderTasks(sourceIndex, destinationIndex) {
+    const [removed] = tasks.splice(sourceIndex, 1);
+    tasks.splice(destinationIndex, 0, removed);
+    saveTasks();
+  }
+
   function renderTasks() {
     taskList.innerHTML = "";
     tasks.forEach((task, index) => {
       let taskElement = document.createElement("li");
       taskElement.classList.add("task");
       taskElement.draggable = true;
+
+      taskElement.addEventListener("dragstart", function (event) {
+        event.dataTransfer.setData("text/plain", index);
+      });
+
+      taskElement.addEventListener("dragover", function (event) {
+        event.preventDefault();
+      });
+
+      taskElement.addEventListener("drop", function (event) {
+        const droppedIndex = parseInt(event.dataTransfer.getData("text/plain"));
+        if (droppedIndex !== index) {
+          reorderTasks(droppedIndex, index);
+        }
+      });
 
       let checkbox = document.createElement("input");
       checkbox.type = "checkbox";
