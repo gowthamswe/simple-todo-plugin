@@ -77,6 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       let editInput = document.createElement("input");
+      editInput.classList.add("edit-text");
       editInput.type = "text";
       editInput.value = task.name;
       editInput.style.display = "none";

@@ -40,6 +40,11 @@ body {
   display: block;
 }
 
+#task-list .task .edit-text {
+  width: 100%;
+  display: block;
+}
+
 #task-list .task .edit-button {
   margin-right: 2px;
 }
