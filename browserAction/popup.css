@@ -7,19 +7,23 @@ body {
   margin-top: 20px;
   width: 350px;
   background-color: rgb(157, 161, 171);
+  font-size: 16px;
+
 }
 
 #task-input-container {
   width: 100%;
   margin-bottom: 5px;
-  font-size: 14px;
+  height: 30px;
   display: flex;
+
 
 }
 
 #new-task {
   width: 100%;
   margin-right: 5px;
+  font-size: 16px;
 }
 
 #task-list {
